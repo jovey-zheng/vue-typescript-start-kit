@@ -1,0 +1,40 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "removeComments": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es2015",
+      "es2015.promise"
+    ],
+    "sourceMap": true,
+    "pretty": true,
+    "baseUrl": "./",
+    "paths": {
+        "@/*": ["src/*"],
+        "components": ["src/components"],
+        "styles": ["src/styles"],
+        "assets": ["src/assets"]
+    },
+    "types": [
+        "node",
+        "webpack-env"
+    ],
+    "typeRoots": [
+        "node_modules/@types"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Vue-typescript-start-kit</title>
+    <script>
+      function setRem() {
+        var dpr = window.devicePixelRatio;
+        var fontSize;
+        var docEl = document.documentElement;
+
+        if (!docEl) return;
+
+        if (window.devicePixelRatio >= 1.5) {
+          dpr = 2;
+        }
+        docEl.setAttribute('data-dpr', dpr);
+
+        var userAgent = navigator.userAgent;
+        if (userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || userAgent.match(/Android/i)) {
+          fontSize = docEl.clientWidth / 7.5;
+
+          if (fontSize < 50) {
+              // fontSize = 50;
+          } else if (fontSize > 75) {
+            fontSize = 75;
+          }
+          return docEl.style.fontSize = fontSize + 'px';
+        }
+
+        docEl.style.fontSize = '50px';
+      };
+      setRem();
+      // 解决ios中预加载时 clientWidth 不正确的问题
+      window.onresize = function () {
+          setRem();
+      }
+      window.remTimer = setInterval(setRem, 200)
+    </script>
+    <style>
+    .enter--loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1rem 0;
+        text-align: center;
+        font-size: .28rem;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    }
+    .enter--spin {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #3cbaff;
+        border-left-color: transparent;
+        border-radius: 50%;
+        animation: .5s enter--loading infinite linear;
+    }
+    @keyframes enter--loading {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+        <div class="enter--loading">
+            <div class="enter--spin"></div>
+            <div style="margin-top: 15px">正在加载内容，请稍后...</div>
+        </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

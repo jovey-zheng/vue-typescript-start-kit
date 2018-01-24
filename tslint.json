@@ -1,0 +1,25 @@
+{
+    "extends": "tslint-config-standard",
+    "rules": {
+        "no-consecutive-blank-lines": false,
+        "variable-name": false,
+        "no-var-keyword": false,
+        "ter-indent": false,
+        "typedef-whitespace": false,
+        "whitespace": false,
+        "class-name": false,
+        "jsdoc-format": false,
+        "one-variable-per-declaration": false,
+        "strict-type-predicates": false,
+        "no-unused-variable": false,
+        "no-use-before-declare": false,
+        "return-undefined": false,
+        "no-floating-promises": false,
+        "no-unnecessary-qualifier": false,
+        "no-unnecessary-type-assertion": false,
+        "await-promise": false
+    },
+    "globals": {
+        "require": true
+    }
+}
