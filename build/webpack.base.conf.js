@@ -65,6 +65,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: process.env.NODE_ENV === "production"
         }
       },
       {
